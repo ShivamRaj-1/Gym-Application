@@ -1,0 +1,120 @@
+.pricing_mainBackground{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+}
+
+.pricing_container{
+    width: 70%;
+    height: 80%;
+    /* border: 2px solid red; */
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.pricing_container > div{
+    width: 48%;
+}
+
+.pass_part{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pass_box{
+    width: 48%;
+    height: 80%;
+    /* border: 2px solid green; */
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+/* .pass_box:hover{
+    height: 100%;
+} */
+.pass_box > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.pass_box > div p{
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.pass_box > div h1{
+    font-weight: 400;
+    font-size: 42px;
+    color: green;
+}
+.pass_box > div span{
+    font-style: italic ;
+    font-size: 14px;
+}
+.pass_box > p{
+    margin: 5px 0;
+}
+.pass_box > button {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+
+    padding: 10px 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.left_box{
+    background-color: rgb(24, 24, 24);
+}
+.left_box > div span{
+    color: white;
+}
+.left_box p{
+    color: white;
+}
+
+.right_box{
+    height: 100%;
+    background-color: white;
+}
+.right_box button{
+    background-color: green;
+    color: white;
+}
+
+.content_part{
+    margin-bottom: 20px;
+}
+.content_part h4{
+    color: gray;
+    font-weight: 500;
+}
+.content_part > h4 span{
+    border-bottom: 2px solid green;
+}
+.content_part h2,
+.content_part h3{
+    margin: 20px 0;
+    font-weight: 500;
+    color: white;
+}
+.content_part p{
+    color: gray;
+}
+.content_part > ul > li{
+    list-style: none;
+    margin: 5px 0;
+    color: gray;
+}
+.content_part > ul span{
+    color: green;
+    font-size: 16px;
+}
