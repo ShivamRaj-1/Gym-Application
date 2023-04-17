@@ -1,0 +1,21 @@
+.container{
+    background-image: url('https://images.pexels.com/photos/1756959/pexels-photo-1756959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') ; 
+    height: 80vh;
+    width: 100vw;
+    position: relative;
+    
+  
+}
+.textContainer{
+position: absolute;
+top: 15%;
+left: 10%;
+width: 50vw;
+}
+.text{
+    font-size: 3em;
+    color: white;
+}
+span{
+    color:green;
+}
