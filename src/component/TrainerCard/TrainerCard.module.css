@@ -6,6 +6,9 @@
 .main_box{
     width: 25%;
 }
+.main_box > a{
+    text-decoration: none;
+}
 
 .image_div{
     width: 100%;

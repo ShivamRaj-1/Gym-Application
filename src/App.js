@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./component/Navbar/Navbar";
 import Home from "./pages/Home";
 import About from './pages/About'
-import Trainer from "./pages/Trainer/Trainer";
+import Trainer from './pages/Trainer/Trainer';
 
 function App() {
   return (
