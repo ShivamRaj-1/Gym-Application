@@ -54,7 +54,7 @@ export default function JoinUs() {
                         <div className={styles.container}>
                             <div className={styles.home}>
                                 <h1>Successfully Registered !</h1>
-                                <Link to='' className={styles.link}><h1>HOME</h1></Link>
+                                <Link to='/' className={styles.link}><h1>HOME</h1></Link>
                             </div>
                         </div> :
                         <div className={styles.container}>
