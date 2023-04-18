@@ -15,20 +15,48 @@ export default function JoinUs() {
     const [clicked, setClicked] = useState(false)
 
 
+
     function handleAlreadyHave() {
         setAlreadyHave(true)
     }
 
     function handleRegister() {
         setToHome(true)
-        const localStore = { name: name, email: email, mobile: mobile, password: password }
         const existingData = JSON.parse(localStorage.getItem('userData')) || [];
-        localStorage.setItem('userData', JSON.stringify([...existingData, localStore]))
+        let notFound = false
+
+        for (let i = 0; i < existingData.length; i++) {
+            if (email == existingData[i].email) {
+                alert('user already existed')
+                notFound = true
+                setToHome(false)
+
+
+
+                break
+
+            }
+        }
+
+        if (notFound == false) {
+            const localStore = { name: name, email: email, mobile: mobile, password: password }
+
+            localStorage.setItem('userData', JSON.stringify([...existingData, localStore]))
+        } else {
+            setName('')
+            setEmail('')
+            setMobile('')
+            setPassword('')
+        }
+
+
+
 
     }
 
 
     function handleLogin() {
+
         const userData = JSON.parse(localStorage.getItem('userData'))
         let exist = false
 
@@ -61,21 +89,24 @@ export default function JoinUs() {
                     <div className={styles.container}>
 
                         <div className={styles.details} >
-                            <h1>Login Here</h1>
-                            <div className={styles.input}>
-                                <div >
-                                    <label htmlFor="email"  >Email:</label>
-                                    <input value={loginEmail} id='email' type='email' placeholder='Enter the mail' onChange={(event) => setLoginEmail(event.target.value)} ></input>
+                            <form>
+                                <h1>Login Here</h1>
+
+                                <div className={styles.input}>
+                                    <div >
+                                        <label htmlFor="email"  >Email:</label>
+                                        <input value={loginEmail} id='email' type='email' placeholder='Enter the mail' onChange={(event) => setLoginEmail(event.target.value)} required  ></input>
+                                    </div>
+                                    <div>
+                                        <label htmlFor="password" >Password:</label>
+                                        <input value={loginPassword} id='password' type='password' placeholder='Enter the password' onChange={(event) => setLoginPassword(event.target.value)} required ></input>
+                                    </div>
                                 </div>
-                                <div>
-                                    <label htmlFor="password" >Password:</label>
-                                    <input value={loginPassword} id='password' type='password' placeholder='Enter the password' onChange={(event) => setLoginPassword(event.target.value)}></input>
-                                </div>
-                            </div>
-                            {
-                              found ? <h1>Details found</h1> : clicked ? <p className={styles.warn}>Details not found ! please <h5 onClick={() => setAlreadyHave(false)}>Register</h5></p> : ''
-                            }
-                            <button onClick={handleLogin}>LOGIN</button>
+                                {
+                                    found ? <h1>Details found</h1> : clicked ? <p className={styles.warn}>Details not found ! please <h5 onClick={() => setAlreadyHave(false)}>Register</h5></p> : ''
+                                }
+                                <button onClick={handleLogin}>LOGIN</button>
+                            </form>
                         </div>
 
 
@@ -95,19 +126,19 @@ export default function JoinUs() {
                                 <div className={styles.input}>
                                     <div className={styles.data}>
                                         <label htmlFor="name" >Name:</label>
-                                        <input required id='name' type='text' placeholder='Enter the Name' onChange={(event) => setName(event.target.value)}></input>
+                                        <input value={name} minLength={6} id='name' type='text' placeholder='Enter the Name' onChange={(event) => setName(event.target.value)} required ></input>
                                     </div>
                                     <div className={styles.data}>
                                         <label htmlFor="email"  >Email:</label>
-                                        <input id='email' type='email' placeholder='Enter the Mail' onChange={(event) => setEmail(event.target.value)} ></input>
+                                        <input value={email} id='email' type='email' placeholder='Enter the Mail' onChange={(event) => setEmail(event.target.value)} required  ></input>
                                     </div>
                                     <div className={styles.data}>
                                         <label htmlFor="mobile" >Mobile:</label>
-                                        <input id='mobile' type='tel' placeholder='Enter the Mobile' onChange={(event) => setMobile(event.target.value)} ></input>
+                                        <input value={mobile} id='mobile' type='tel' placeholder='Enter the Mobile' onChange={(event) => setMobile(event.target.value)} required  ></input>
                                     </div>
                                     <div className={styles.data}>
                                         <label htmlFor="password" >Password:</label>
-                                        <input id='password' type='password' placeholder='Enter the Password' onChange={(event) => setPassword(event.target.value)}></input>
+                                        <input value={password} minLength={6} id='password' type='password' placeholder='Enter the Password' onChange={(event) => setPassword(event.target.value)} required ></input>
                                     </div>
                                 </div>
                                 <button onClick={() => handleRegister(name, email, mobile, password)}>Register</button>

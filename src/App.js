@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from './pages/About'
 import Trainer from "./pages/Trainer/Trainer";
 import Pricing from "./pages/Pricing/Pricing";
+import JoinUs from './pages/JoinUs/JoinUs'
 
 function App() {
   return (
