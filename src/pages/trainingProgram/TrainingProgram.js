@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "../../App.css";
 import styles from './TrainingProgram.module.css';
 
@@ -26,6 +26,16 @@ export default function TrainingProgram() {
       text: "Cardio",
     },
   ];
+//   const bgImageStyle = {
+//     backgroundImage: `url(${slideData[currentSlideIndex].url})`,
+//     backgroundPosition: "center",
+//     backgroundSize: "cover",
+//     height: "100%",
+//   };
+
+// const [currentIndex,setCurrentIndex]=useState(0);
+//   useEffect(()={},[])
+
 
   return (
     <Fragment>

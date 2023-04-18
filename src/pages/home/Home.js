@@ -2,20 +2,20 @@ import React, { Fragment, useEffect } from "react";
 import style from "./Home.module.css";
 import Button from "@mui/material/Button";
 import TrainingProgram from "../trainingProgram/TrainingProgram";
-import { slideData } from "../../utills/HomePageSliderData.js";
+import { slideData } from "../../utils/HomePageSliderData.js";
 import { useState } from "react";
 import { MdArrowForwardIos, MdArrowBackIosNew } from "react-icons/md";
 import { height } from "@mui/system";
 
 export default function Home() {
-  const [slideValue, setSlideValue] = useState(0);
+  // const [slideValue, setSlideValue] = useState(0);
 
-  const handleSlideChangeLeft = () => {
-    setSlideValue((slideValue + 1) % slideData.length);
-  };
-  const handleSlideChangeRight = () => {
-    setSlideValue(slideValue - 1);
-  };
+  // const handleSlideChangeLeft = () => {
+  //   setSlideValue((slideValue + 1) % slideData.length);
+  // };
+  // const handleSlideChangeRight = () => {
+  //   setSlideValue(slideValue - 1);
+  // };
 
   return (
     <Fragment>
@@ -26,8 +26,8 @@ export default function Home() {
       <Slider index={slideValue} />
       <button onClick={handleSlideChangeRight}>
         <MdArrowForwardIos />
-      </button>
-      <TrainingProgram /> */}
+      </button> */}
+      {/* <TrainingProgram /> */}
     </Fragment>
   );
 }

@@ -5,6 +5,7 @@ nav{
     background: linear-gradient(90deg, rgb(95, 94, 94), rgb(32, 32, 32));
     position: sticky;
     top: 0;
+    z-index: 999;
 }
 nav img{
     width: 8rem;
