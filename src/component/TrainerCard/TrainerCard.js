@@ -1,6 +1,6 @@
 import React from 'react'
 import TCS from './TrainerCard.module.css'
-import { Trainer_details } from '../../utils/Trainer_details'
+import { Trainer_details } from '../../utils/Trainer_details' 
 
 export default function TrainerCard() {
   return (
@@ -14,7 +14,7 @@ export default function TrainerCard() {
                         </div>
                         <div className={TCS.box_content}>
                             <h3>{elem.name}</h3>
-                            <p>{elem.coach}</p>
+                            <p>{elem.coach}</p> 
                         </div>
                     </div>
                 )
