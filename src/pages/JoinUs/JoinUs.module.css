@@ -1,0 +1,63 @@
+.container {
+    background-color: aqua;
+    min-height: 90vh;
+    max-width: 80vw;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.details {
+    /* background-color: chartreuse; */
+    min-height: 80vh;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.input {
+    background-color: brown;
+    min-height: 50vh;
+    max-width: 20vw;
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+
+}
+
+.data {
+    margin: 30px;
+    text-align: left;
+
+}
+
+label {
+    font-size: larger;
+    margin: 20px;
+}
+
+input {
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+}
+
+button {
+    padding: 5px;
+    min-width: 150px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.home {
+    text-align: center;
+    padding: 50px;
+    margin: 20px;
+
+}
+
+.link:hover {
+    text-decoration: none;
+}
