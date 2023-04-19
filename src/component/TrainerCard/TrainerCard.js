@@ -6,9 +6,9 @@ export default function TrainerCard() {
     return (
         <div className={TCS.card_main}>
             { 
-                Trainer_details.map((elem) => {
+                Trainer_details.map((elem, index) => {
                     return (
-                        <div className={TCS.main_box}>
+                        <div className={TCS.main_box} key={index}>
                             <div className={TCS.image_div}>
                                 <img src={elem.url} alt="" />
                             </div>
