@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import About from './pages/About'
 import Trainer from "./pages/Trainer/Trainer";
 import Pricing from "./pages/Pricing/Pricing";
+import JoinUs from './pages/JoinUs/JoinUs'
 
 
 
