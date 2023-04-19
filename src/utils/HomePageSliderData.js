@@ -1,16 +1,16 @@
 export const slideData = [
   {
-    text: `Take care of your body it's the only place have to live.`,
+    text:"Intelligence is the handmaiden of flexibility and change.",
     url: "./flexibility.jpg",
     body: "one",
   },
   {
-    text: "this is second slide",
+    text: "Success usually comes to those who are too busy to be looking for it.",
     url: "./cardio.jpg",
     body: "two",
   },
   {
-    text: "this is Third Slide",
+    text: "Yoga is the perfect opportunity to be curious about who you are.",
     url: "./yoga.jpg",
     body: "Three",
   },
