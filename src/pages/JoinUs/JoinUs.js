@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link ,useNavigate} from 'react-router-dom'
 import styles from './JoinUs.module.css'
 
 export default function JoinUs() {
@@ -14,6 +14,7 @@ export default function JoinUs() {
     const [found, setFound] = useState(false)
     const [clicked, setClicked] = useState(false)
     const [error, setError] = useState(false)
+    const navigate=useNavigate()
 
 
 
@@ -79,6 +80,8 @@ export default function JoinUs() {
 
         if (exist) {
             setFound(true)
+            alert('Successfully Logged In')
+            navigate('/')
         } else {
             setFound(false)
         }
@@ -112,7 +115,7 @@ export default function JoinUs() {
                                     </div>
                                 </div>
                                 {
-                                    found ? <h1>Details found</h1> : clicked ? <p className={styles.warn}>Details not found ! please <h5 onClick={() => setAlreadyHave(false)}>Register</h5></p> : ''
+                                    found ? <h1>''</h1> : clicked ? <p className={styles.warn}>Details not found ! please <h5 onClick={() => setAlreadyHave(false)}>Register</h5></p> : ''
                                 }
                                 <button onClick={handleLogin}>LOGIN</button>
                             </form>
@@ -153,7 +156,7 @@ export default function JoinUs() {
                                 {
                                     error ? <p id={styles.fieldsWarn}>All the Input fields are mandatory</p> : ''
                                 }
-                                <button onClick={() => handleRegister(name, email, mobile, password)}  >Register</button>
+                                <button onClick={handleRegister}  >Register</button>
                                 <button onClick={handleAlreadyHave} >already have account ? Sign In</button>
                             </div>
 
