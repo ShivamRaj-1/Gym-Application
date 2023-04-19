@@ -1,12 +1,17 @@
 import React from 'react'
 import styles from './About.module.css'
+import Background from '../component/Background/Background'
 
 
 export default function About() {
+  const img = 'https://images.pexels.com/photos/4662351/pexels-photo-4662351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
   function handleLearnMore() {
     alert('clicked from about us section')
   }
   return (
+    <>
+    <div className={styles.empty}></div>
+    <Background imgUrl={img} heading={'About Us'}/>
     <div className={styles.container}>
       <section className={styles.about}>
       <iframe  src="https://www.youtube.com/embed/vei81-bZhG4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen={true}></iframe>
@@ -33,5 +38,7 @@ export default function About() {
       </div>
       </section>
     </div>
+    </>
+    
   )
 }

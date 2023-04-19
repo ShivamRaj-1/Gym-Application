@@ -7,6 +7,7 @@ import { useState } from "react";
 import { MdArrowForwardIos, MdArrowBackIosNew } from "react-icons/md";
 import { height } from "@mui/system";
 import TrainerMain from "../../component/TrainerMain/TrainerMain";
+import TrainerBanner from '../../component/TrainerBanner/TrainerBanner';
 
 export default function Home() {
   // const [slideValue, setSlideValue] = useState(0);
@@ -17,6 +18,7 @@ export default function Home() {
   // const handleSlideChangeRight = () => {
   //   setSlideValue(slideValue - 1);
   // };
+
 
   return (
     <Fragment>
@@ -30,6 +32,7 @@ export default function Home() {
       </button> */}
       {/* <TrainingProgram /> */}
       <TrainerMain show={true}/>
+      <TrainerBanner h1 = {'BIG OFFER FOR'}  h2={'THIS SUMMER'} url={'https://preview.colorlib.com/theme/gym2/img/banner/big_offer.png.webp'}/>
     </Fragment>
   );
 }
@@ -97,6 +100,7 @@ export function Slider({ index }) {
           Join With Us
         </Button>
       </div>
+      
     </div>
   );
 }

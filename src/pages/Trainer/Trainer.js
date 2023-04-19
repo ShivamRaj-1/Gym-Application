@@ -65,7 +65,7 @@ export default function Trainer() {
 
       </section>
 
-      <TrainerBanner />
+      <TrainerBanner h1 = {'BIG OFFER FOR'}  h2={'THIS SUMMER'} url={'https://preview.colorlib.com/theme/gym2/img/banner/big_offer.png.webp'}/>
 
       <section className={TS.features_section}>
           <h1>PUSH YOUR LIMITS</h1>
