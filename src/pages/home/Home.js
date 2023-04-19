@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import style from "./Home.module.css";
 import Button from "../../component/button/Button";
-import TrainingProgram from "../trainingProgram/TrainingProgram";
+import TrainingProgram from "../../component/trainingProgram/TrainingProgram";
 import { slideData } from "../../utils/HomePageSliderData.js";
 import { useState } from "react";
 import { useNavigate } from "react-router";
