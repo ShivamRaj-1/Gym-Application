@@ -129,7 +129,7 @@ export default function JoinUs() {
                         <div className={styles.container}>
                             <div className={styles.home}>
                                 <h1>Successfully Registered !</h1>
-                                <Link to='/' className={styles.link}><h1>HOME</h1></Link>
+                                <button onClick={handleAlreadyHave} >Sign In</button>
                             </div>
                         </div> :
                         <div className={styles.container}>
@@ -138,7 +138,7 @@ export default function JoinUs() {
                                 <div className={styles.input}>
                                     <div className={styles.data}>
                                         <label htmlFor="name" >Name:</label>
-                                        <input value={name} minLength={6} name='name' type='text' placeholder='Enter the Name' onChange={(event) => setName(event.target.value)} required ></input>
+                                        <input value={name} minLength='6' name='name' type='text' placeholder='Enter the Name' onChange={(event) => setName(event.target.value)} required ></input>
                                     </div>
                                     <div className={styles.data}>
                                         <label htmlFor="email"  >Email:</label>
@@ -150,7 +150,7 @@ export default function JoinUs() {
                                     </div>
                                     <div className={styles.data}>
                                         <label htmlFor="password" >Password:</label>
-                                        <input value={password} minLength={6} name='password' type='password' placeholder='Enter the Password' onChange={(event) => setPassword(event.target.value)} required ></input>
+                                        <input value={password} minLength='6' name='password' type='password' placeholder='Enter the Password' onChange={(event) => setPassword(event.target.value)} required ></input>
                                     </div>
                                 </div>
                                 {
