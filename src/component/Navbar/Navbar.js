@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Button from '../button/Button'
 
 import styles from './Navbar.module.css'
 
@@ -14,7 +15,7 @@ export default function Navbar() {
         <li><a href='#trainer' className={styles.link}>Trainers</a></li>
         <li><Link to={'/pricing'} className={styles.link}>Pricing</Link></li> 
       </ul>
-      <Link to={'/joining'}><button>Join Us</button></Link>
+      <Link to={'/joining'}><Button name= 'Join Us'/></Link>
     </nav>
   )
 }

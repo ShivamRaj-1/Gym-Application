@@ -1,81 +1,129 @@
-.container {
-    background-image: url('https://images.pexels.com/photos/1756959/pexels-photo-1756959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+{
+    /*//-------------/ImageSlider/----------------/*/
+}
+
+
+.containerStyles {
+
     height: 80vh;
     width: 100vw;
-    position: relative;
-
-
-}
-
-.textContainer {
-    position: absolute;
-    top: 15%;
-    left: 10%;
-    width: 50vw;
-}
-
-.text {
-    font-size: 3em;
-    color: white;
-}
-
-span {
-    color: green;
-}
-
-{/*//-------------/ImageSlider/----------------/*/}
-
-
-.containerStyles{
-
-    height: 80vh;
-    position: relative;
+    /* position: relative; */
+    /* transition-duration: 0.7s; */
+    /* transform: translate3d(100%, 0px, 0px); */
     /* border:1px solid red; */
 }
 
-.description{
-    width: 600px;
-    position: absolute;
+.description {
+    display: flex;
+    width: 100%;
+    position: relative;
     z-index: 10;
-    color: green;
-    top: 30%;
-    left: 20%  ;
-    height: fit-content;
+    color: white;
+    top: -12%;
+    /* left: 20%; */
+    margin: 0px;
+    height: -moz-fit-content;
+    /* height: fit-content; */
     /* border: 1px solid black; */
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1rem;
+
 
 }
-.description h1{
+
+.description h1 {
     font-style: 40px;
 
 }
+
 .description p {
     font-style: 22px;
 }
-.carousal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: -50px;
+
+.carousal {
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    position: absolute;
+    top: 30%;
 
 }
+
 .carousal span {
     width: 20px;
     height: 20px;
-    background-color: rgb(179,178,176);
-    margin-left: 10px;
+    background-color: rgb(179, 178, 176);
+    margin: 1rem;
     border-radius: 50%;
     cursor: pointer;
+    z-index: 10;
+    margin-top: -2rem;
 
 }
 
-.transparentBackground{
+.transparentBackground {
     width: 100%;
     height: 80vh;
     position: absolute;
     z-index: 9;
     top: 0;
     left: 0;
-    background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(190, 61, 61, 0.808));
+    background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(190, 61, 61, 0.808));
+
+}
+
+.des_carousal{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+
+
+}
+@media screen and (min-width:840px) {
+    .containerStyles {
+        /* height: 50vh; */
+        width: 100vw;
+        
+        
+    }
+    
+    .description {
+        font-size: 20px;
+        height: 30vh;
+        /* position: relative; */
+        /* top: -90%; */
+    }
+
+    .description h1 {
+        width: 1ppc;
+        font: 2rem;
+    }
+
+    .carousal { 
+        top: 13rem;
+        left: 60%;
+        display: flex;
+    }
+}
+@media screen and (max-width:1000px) {
+    .carousal { 
+        position: relative;
+        top: 10rem;
+        left: 65%;
+        display: flex;
+        align-items: flex-end;
+        /* margin-top: 20px; */
+        /* flex-direction: row; */
+        /* height: 100%; */
+        /* width: 100%; */
+}
+.carousal span {
+    /* margin-top: -2rem; */
+
+}
+
 
 }
