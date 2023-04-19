@@ -20,7 +20,7 @@ export default function Home() {
       </div>
       <div>
       <TrainingProgram />
-      <TrainerBanner h1 = {'BIG OFFER FOR'}  h2={'THIS SUMMER'} url={'https://preview.colorlib.com/theme/gym2/img/banner/big_offer.png.webp'}/>
+      <TrainerBanner h1 = {'WORKOUT WITH'}  h2={'PROFESSIONAL TRAINERS'} url={'https://preview.colorlib.com/theme/gym2/img/banner/offer.png.webp'}/>
       </div>
       <TrainerMain show={true}/>
     </Fragment>

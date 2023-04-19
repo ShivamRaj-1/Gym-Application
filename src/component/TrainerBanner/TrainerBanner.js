@@ -1,5 +1,7 @@
 import React from 'react'
 import TB from './TrainerBanner.module.css'
+import Button from '../button/Button'
+import {Link} from 'react-router-dom'
 
 export default function TrainerBanner(props) {
     return (
@@ -15,7 +17,7 @@ export default function TrainerBanner(props) {
             <div>
                 <h1> {props.h1} </h1>
                 <h1> {props.h2} </h1>
-                <button> JOIN NOW </button>
+                <Link to={'/joining'}><Button name= 'Join Now'/></Link>
             </div>
         </section>
     )

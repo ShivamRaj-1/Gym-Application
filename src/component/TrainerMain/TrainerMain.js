@@ -5,7 +5,7 @@ import TrainerCard from '../TrainerCard/TrainerCard'
 
 export default function TrainerMain({ show }) {
   return (
-    <div id='trainer' className={TMS.trainerMain_mainBackground}>
+    <div className={TMS.trainerMain_mainBackground}>
       <div className={TMS.trainer_container}>
 
         <div className={TMS.heading_part}>
