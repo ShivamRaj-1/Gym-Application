@@ -1,44 +1,35 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect,useState } from "react";
 import style from "./Home.module.css";
-import Button from "@mui/material/Button";
-import TrainingProgram from "../trainingProgram/TrainingProgram";
+import Button from "../../component/button/Button";
+import TrainingProgram from "../../component/trainingProgram/TrainingProgram";
 import { slideData } from "../../utils/HomePageSliderData.js";
-import { useState } from "react";
-import { MdArrowForwardIos, MdArrowBackIosNew } from "react-icons/md";
-import { height } from "@mui/system";
-import TrainerMain from "../../component/TrainerMain/TrainerMain";
-import TrainerBanner from '../../component/TrainerBanner/TrainerBanner';
+import TrainerMain from '../../component/TrainerMain/TrainerMain'
+import TrainerBanner from '../../component/TrainerBanner/TrainerBanner'
+import { useNavigate } from "react-router";
+
+
 
 export default function Home() {
-  // const [slideValue, setSlideValue] = useState(0);
-
-  // const handleSlideChangeLeft = () => {
-  //   setSlideValue((slideValue + 1) % slideData.length);
-  // };
-  // const handleSlideChangeRight = () => {
-  //   setSlideValue(slideValue - 1);
-  // };
 
 
   return (
     <Fragment>
+      <div>
       <ImageSlider />
-      {/* <button onClick={handleSlideChangeLeft}>
-        <MdArrowBackIosNew />
-      </button>
-      <Slider index={slideValue} />
-      <button onClick={handleSlideChangeRight}>
-        <MdArrowForwardIos />
-      </button> */}
-      {/* <TrainingProgram /> */}
-      <TrainerMain show={true}/>
+      
+      </div>
+      <div>
+      <TrainingProgram />
       <TrainerBanner h1 = {'BIG OFFER FOR'}  h2={'THIS SUMMER'} url={'https://preview.colorlib.com/theme/gym2/img/banner/big_offer.png.webp'}/>
+      </div>
+      <TrainerMain show={true}/>
     </Fragment>
   );
 }
 
 export function ImageSlider() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+ const navigate= useNavigate()
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -58,49 +49,38 @@ export function ImageSlider() {
     height: "100%",
   };
 
-  const goToNext = (currentSlideIndex) => {
-    setCurrentSlideIndex(currentSlideIndex);
-  };
+  // const goToNext = (currentSlideIndex) => {
+  //   setCurrentSlideIndex(currentSlideIndex);
+  // };
+  // To be used for corausal 
+
+  const pageToJoin =()=>{
+    navigate('./joining')
+  }
 
   return (
     <div className={style.containerStyles}>
       <div style={bgImageStyle}></div>
       <div className={style.transparentBackground}></div>
+      <div className={style.des_carousal}>
+
       <div className={style.description}>
-       
-          <h1>{slideData[currentSlideIndex].text}</h1>
-          <p>{slideData[currentSlideIndex].body}</p>
-          <Button variant="contained" color="success">
-            Join With Us
-          </Button>
-        
+        <h1>{slideData[currentSlideIndex].text}</h1>
+        {/* <p>{slideData[currentSlideIndex].body}</p> */}
+        <Button name='Join With Us'
+        onClick={pageToJoin}
+        />
       </div>
-        <div className={style.carousal}>
-          {slideData.map((slideData, currentSlideIndex) => (
-            <span
-              key={currentSlideIndex}
-              onClick={() => goToNext(currentSlideIndex)}
-            ></span>
-          ))}
-        </div>
+      {/* <div className={style.carousal}>
+        {slideData.map((slideData, currentSlideIndex) => (
+          <span
+            key={currentSlideIndex}
+            onClick={() => goToNext(currentSlideIndex)}
+          ></span>
+        ))}
+      </div> */}
+      </div>
     </div>
   );
 }
 
-export function Slider({ index }) {
-  return (
-    <div className={style.container}>
-      <div className={style.textContainer}>
-        <h1 className={style.text}>
-          {slideData[index].text}
-          {/* "Take care of your <span>body</span> it's <br />
-          the only place have to <span>live</span>." */}
-        </h1>
-        <Button variant="contained" color="success">
-          Join With Us
-        </Button>
-      </div>
-      
-    </div>
-  );
-}
