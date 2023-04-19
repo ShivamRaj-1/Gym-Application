@@ -9,6 +9,7 @@ export default function JoinUs() {
     const [password, setPassword] = useState('')
     const [alreadyHave, setAlreadyHave] = useState(false)
     const [toHome, setToHome] = useState(false)
+
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPassword, setLoginPassword] = useState('')
     const [found, setFound] = useState(false)
@@ -18,11 +19,13 @@ export default function JoinUs() {
 
 
 
+
     function handleAlreadyHave() {
         setAlreadyHave(true)
     }
 
     function handleRegister() {
+
 
         if (name.trim() == '' || email.trim() == '' || mobile.trim() == '' || password.trim() == '') {
             setError(true)
@@ -90,6 +93,7 @@ export default function JoinUs() {
         setLoginEmail('')
         setLoginPassword('')
 
+
     }
 
 
@@ -101,6 +105,7 @@ export default function JoinUs() {
                     <div className={styles.container}>
 
                         <div className={styles.details} >
+
                             <form>
                                 <h1>Login Here</h1>
 
@@ -119,6 +124,7 @@ export default function JoinUs() {
                                 }
                                 <button onClick={handleLogin}>LOGIN</button>
                             </form>
+
                         </div>
 
 
@@ -129,15 +135,18 @@ export default function JoinUs() {
                         <div className={styles.container}>
                             <div className={styles.home}>
                                 <h1>Successfully Registered !</h1>
+
                                 <button onClick={handleAlreadyHave} > Login In</button>
                             </div>
                         </div> :
                         <form className={styles.container}>
+
                             <div className={styles.details}>
                                 <h1>Register Here</h1>
                                 <div className={styles.input}>
                                     <div className={styles.data}>
                                         <label htmlFor="name" >Name:</label>
+
                                         <input value={name} minLength={6} name='name' type='text' placeholder='Enter the Name' onChange={(event) => setName(event.target.value)} required ></input>
                                     </div>
                                     <div className={styles.data}>
@@ -162,6 +171,7 @@ export default function JoinUs() {
 
 
                         </form>
+
 
 
             }
