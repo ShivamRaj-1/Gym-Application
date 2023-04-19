@@ -1,26 +1,28 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect,useState } from "react";
 import style from "./Home.module.css";
 import Button from "../../component/button/Button";
-import TrainingProgram from "../trainingProgram/TrainingProgram";
+import TrainingProgram from "../../component/trainingProgram/TrainingProgram";
 import { slideData } from "../../utils/HomePageSliderData.js";
-import { useState } from "react";
+import TrainerMain from '../../component/TrainerMain/TrainerMain'
+import TrainerBanner from '../../component/TrainerBanner/TrainerBanner'
 import { useNavigate } from "react-router";
 
 
-// import { MdArrowForwardIos, MdArrowBackIosNew } from "react-icons/md";
-
 
 export default function Home() {
+
 
   return (
     <Fragment>
       <div>
       <ImageSlider />
+      
       </div>
       <div>
-
       <TrainingProgram />
+      <TrainerBanner h1 = {'WORKOUT WITH'}  h2={'PROFESSIONAL TRAINERS'} url={'https://preview.colorlib.com/theme/gym2/img/banner/offer.png.webp'}/>
       </div>
+      <TrainerMain show={true}/>
     </Fragment>
   );
 }
@@ -47,9 +49,10 @@ export function ImageSlider() {
     height: "100%",
   };
 
-  const goToNext = (currentSlideIndex) => {
-    setCurrentSlideIndex(currentSlideIndex);
-  };
+  // const goToNext = (currentSlideIndex) => {
+  //   setCurrentSlideIndex(currentSlideIndex);
+  // };
+  // To be used for corausal 
 
   const pageToJoin =()=>{
     navigate('./joining')

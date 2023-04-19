@@ -11,8 +11,8 @@ export default function Navbar() {
       <ul> 
         <li><Link to={'/about'} className={styles.link}>AboutUs</Link></li> 
         <li><Link to={"/program"} className={styles.link}>Programs</Link></li> 
-        {/* <li><Link to= {'trainer'} className={styles.link}> Trainers</Link></li>  */}
-        <li><a href='#trainer' className={styles.link}>Trainers</a></li>
+        <li><Link to= {'/trainer'} className={styles.link}> Trainers</Link></li> 
+        {/* <li><a href='#trainer' className={styles.link}>Trainers</a></li> */}
         <li><Link to={'/pricing'} className={styles.link}>Pricing</Link></li> 
       </ul>
       <Link to={'/joining'}><Button name= 'Join Us'/></Link>
