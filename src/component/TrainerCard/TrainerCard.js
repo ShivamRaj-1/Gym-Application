@@ -1,6 +1,6 @@
 import React from 'react'
 import TCS from './TrainerCard.module.css'
-import { Trainer_details } from '../../utils/Trainer_details'
+import { Trainer_details } from '../../utils/Trainer_details' 
 
 export default function TrainerCard() {
     return (

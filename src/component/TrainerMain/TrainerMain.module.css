@@ -1,3 +1,8 @@
+.trainerMain_mainBackground{
+    width: 100%;
+    background-color: black;
+    padding-bottom: 30px;
+}
 
 .trainer_container{
     width: 80%;
