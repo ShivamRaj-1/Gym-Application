@@ -129,10 +129,10 @@ export default function JoinUs() {
                         <div className={styles.container}>
                             <div className={styles.home}>
                                 <h1>Successfully Registered !</h1>
-                                <Link to='/' className={styles.link}><h1>HOME</h1></Link>
+                                <button onClick={handleAlreadyHave} > Login In</button>
                             </div>
                         </div> :
-                        <div className={styles.container}>
+                        <form className={styles.container}>
                             <div className={styles.details}>
                                 <h1>Register Here</h1>
                                 <div className={styles.input}>
@@ -161,7 +161,7 @@ export default function JoinUs() {
                             </div>
 
 
-                        </div>
+                        </form>
 
 
             }
