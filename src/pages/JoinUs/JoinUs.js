@@ -13,6 +13,7 @@ export default function JoinUs() {
     const [loginPassword, setLoginPassword] = useState('')
     const [found, setFound] = useState(false)
     const [clicked, setClicked] = useState(false)
+    const [error, setError] = useState(false)
 
 
 
@@ -21,35 +22,43 @@ export default function JoinUs() {
     }
 
     function handleRegister() {
-        setToHome(true)
-        const existingData = JSON.parse(localStorage.getItem('userData')) || [];
-        let notFound = false
 
-        for (let i = 0; i < existingData.length; i++) {
-            if (email == existingData[i].email) {
-                alert('user already existed')
-                notFound = true
-                setToHome(false)
+        if (name.trim() == '' || email.trim() == '' || mobile.trim() == '' || password.trim() == '') {
+            setError(true)
 
-
-
-                break
-
-            }
-        }
-
-        if (notFound == false) {
-            const localStore = { name: name, email: email, mobile: mobile, password: password }
-
-            localStorage.setItem('userData', JSON.stringify([...existingData, localStore]))
         } else {
-            setName('')
-            setEmail('')
-            setMobile('')
-            setPassword('')
+
+            setError(false)
+
+            setToHome(true)
+            const existingData = JSON.parse(localStorage.getItem('userData')) || [];
+            let notFound = false
+
+            for (let i = 0; i < existingData.length; i++) {
+                if (email == existingData[i].email) {
+                    alert('user already existed please SIGN IN')
+                    notFound = true
+                    setToHome(false)
+
+
+
+                    break
+
+                }
+            }
+
+            if (notFound == false) {
+                const localStore = { name: name, email: email, mobile: mobile, password: password }
+
+                localStorage.setItem('userData', JSON.stringify([...existingData, localStore]))
+            } else {
+                setName('')
+                setEmail('')
+                setMobile('')
+                setPassword('')
+            }
+
         }
-
-
 
 
     }
@@ -95,11 +104,11 @@ export default function JoinUs() {
                                 <div className={styles.input}>
                                     <div >
                                         <label htmlFor="email"  >Email:</label>
-                                        <input value={loginEmail} id='email' type='email' placeholder='Enter the mail' onChange={(event) => setLoginEmail(event.target.value)} required  ></input>
+                                        <input value={loginEmail} name='email' type='email' placeholder='Enter the mail' onChange={(event) => setLoginEmail(event.target.value)} required  ></input>
                                     </div>
                                     <div>
                                         <label htmlFor="password" >Password:</label>
-                                        <input value={loginPassword} id='password' type='password' placeholder='Enter the password' onChange={(event) => setLoginPassword(event.target.value)} required ></input>
+                                        <input value={loginPassword} name='password' type='password' placeholder='Enter the password' onChange={(event) => setLoginPassword(event.target.value)} required ></input>
                                     </div>
                                 </div>
                                 {
@@ -126,24 +135,28 @@ export default function JoinUs() {
                                 <div className={styles.input}>
                                     <div className={styles.data}>
                                         <label htmlFor="name" >Name:</label>
-                                        <input value={name} minLength={6} id='name' type='text' placeholder='Enter the Name' onChange={(event) => setName(event.target.value)} required ></input>
+                                        <input value={name} minLength={6} name='name' type='text' placeholder='Enter the Name' onChange={(event) => setName(event.target.value)} required ></input>
                                     </div>
                                     <div className={styles.data}>
                                         <label htmlFor="email"  >Email:</label>
-                                        <input value={email} id='email' type='email' placeholder='Enter the Mail' onChange={(event) => setEmail(event.target.value)} required  ></input>
+                                        <input value={email} name='email' type='email' placeholder='Enter the Mail' onChange={(event) => setEmail(event.target.value)} required  ></input>
                                     </div>
                                     <div className={styles.data}>
                                         <label htmlFor="mobile" >Mobile:</label>
-                                        <input value={mobile} id='mobile' type='tel' placeholder='Enter the Mobile' onChange={(event) => setMobile(event.target.value)} required  ></input>
+                                        <input value={mobile} name='mobile' type='tel' placeholder='Enter the Mobile' onChange={(event) => setMobile(event.target.value)} required  ></input>
                                     </div>
                                     <div className={styles.data}>
                                         <label htmlFor="password" >Password:</label>
-                                        <input value={password} minLength={6} id='password' type='password' placeholder='Enter the Password' onChange={(event) => setPassword(event.target.value)} required ></input>
+                                        <input value={password} minLength={6} name='password' type='password' placeholder='Enter the Password' onChange={(event) => setPassword(event.target.value)} required ></input>
                                     </div>
                                 </div>
-                                <button onClick={() => handleRegister(name, email, mobile, password)}>Register</button>
+                                {
+                                    error ? <p id={styles.fieldsWarn}>All the Input fields are mandatory</p> : ''
+                                }
+                                <button onClick={() => handleRegister(name, email, mobile, password)}  >Register</button>
+                                <button onClick={handleAlreadyHave} >already have account ? Sign In</button>
                             </div>
-                            <button onClick={handleAlreadyHave} >already have account ? Sign In</button>
+
 
                         </div>
 
