@@ -4,12 +4,12 @@ import BG from './Background.module.css'
 export default function Background({ imgUrl, heading }) {
     return (
         <section style={{
-            background: `url(${imgUrl})`,
+            background: `url(${imgUrl}) ` ,
             backgroundSize: "cover",
             backgroundAttachment: "fixed",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: 'top',
-        }}
+            backgroundPosition: 'center',
+        }}  height="100vh" width='100%'
             className={BG.trainer_coverPic}
         >
             <h1> {heading} </h1>
