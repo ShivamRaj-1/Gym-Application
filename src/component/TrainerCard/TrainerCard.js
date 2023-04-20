@@ -7,9 +7,9 @@ export default function TrainerCard() {
         <div className={TCS.card_main}>
 
             {
-                Trainer_details.filter((elem, i)=> i<4).map((elem) => {
+                Trainer_details.filter((elem, i)=> i<4).map((elem, i) => {
                     return (
-                        <div className={TCS.main_box}>
+                        <div className={TCS.main_box} key={i}>
                             <div
                                 className={TCS.image_div}
                                 style={{

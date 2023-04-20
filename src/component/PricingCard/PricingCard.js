@@ -6,9 +6,9 @@ export default function PricingCard() {
   return (
     <div className={PC.pricing_card_main}>
         {
-            pricingCardData.map((elem)=>{
+            pricingCardData.map((elem,index)=>{
                 return (
-                    <div className={PC.pricing_card_box}>
+                    <div className={PC.pricing_card_box} key={index}>
                         <img src={elem.img} alt="" /> 
                         <h2>{elem.heading}</h2> 
                         <p>{elem.description}</p>

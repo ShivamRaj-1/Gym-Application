@@ -43,7 +43,7 @@ export default function Trainer() {
 
         <div className={TS.coach_div}>
           {
-            Trainer_details.map((elem) => {
+            Trainer_details.map((elem, index) => {
               return (
                 <div
                   style={{
@@ -53,8 +53,8 @@ export default function Trainer() {
                     backgroundPosition: 'center',
                   }}
                   className={TS.coach_box}
-                >
-                  <div className={TS.coach_box_details}>
+                key={index}>
+                  <div className={TS.coach_box_details} >
                     <h2> {elem.name} </h2>
                     <p> {elem.coach} </p>
                   </div>
@@ -74,9 +74,9 @@ export default function Trainer() {
 
           <div className={TS.feature_container}>
             {
-              trainer_card.map((elem)=>{
+              trainer_card.map((elem, index)=>{
                 return(
-                  <div className={TS.feature_box}>
+                  <div className={TS.feature_box} key={index}>
                     <img src={elem.img} alt="" />
                     <h3>{elem.heading}</h3>
                     <p>{elem.description}</p>
