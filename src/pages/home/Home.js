@@ -39,7 +39,7 @@ export function ImageSlider() {
       } else {
         setCurrentSlideIndex(currentSlideIndex + 1);
       }
-    }, 3000);
+    }, 100000);
     return () => clearTimeout(timer);
   }, [currentSlideIndex]);
 
