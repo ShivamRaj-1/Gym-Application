@@ -1,33 +1,35 @@
-import React, { Fragment, useEffect } from "react";
-import style from "./Home.module.css";
+
+import React, { Fragment, useEffect,useState } from "react";
+// import style from "./Home.module.css";
+import style from "./demo.module.css";
+
 import Button from "../../component/button/Button";
 import TrainingProgram from "../../component/trainingProgram/TrainingProgram";
 import { slideData } from "../../utils/HomePageSliderData.js";
-import { useState } from "react";
+import TrainerMain from '../../component/TrainerMain/TrainerMain'
+import TrainerBanner from '../../component/TrainerBanner/TrainerBanner'
 import { useNavigate } from "react-router";
 
-
-// import { MdArrowForwardIos, MdArrowBackIosNew } from "react-icons/md";
 
 
 export default function Home() {
 
+
   return (
     <Fragment>
       <div>
-      <ImageSlider />
+        <ImageSlider />
+        <TrainingProgram />
+        <TrainerBanner h1={'WORKOUT WITH'} h2={'PROFESSIONAL TRAINERS'} url={'https://preview.colorlib.com/theme/gym2/img/banner/offer.png.webp'} />
       </div>
-      <div>
-
-      <TrainingProgram />
-      </div>
+      <TrainerMain show={true} />
     </Fragment>
   );
 }
 
 export function ImageSlider() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
- const navigate= useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -36,7 +38,7 @@ export function ImageSlider() {
       } else {
         setCurrentSlideIndex(currentSlideIndex + 1);
       }
-    }, 5000);
+    }, 100000);
     return () => clearTimeout(timer);
   }, [currentSlideIndex]);
 
@@ -47,11 +49,12 @@ export function ImageSlider() {
     height: "100%",
   };
 
-  const goToNext = (currentSlideIndex) => {
-    setCurrentSlideIndex(currentSlideIndex);
-  };
+  // const goToNext = (currentSlideIndex) => {
+  //   setCurrentSlideIndex(currentSlideIndex);
+  // };
+  // To be used for corausal 
 
-  const pageToJoin =()=>{
+  const pageToJoin = () => {
     navigate('./joining')
   }
 
@@ -61,14 +64,14 @@ export function ImageSlider() {
       <div className={style.transparentBackground}></div>
       <div className={style.des_carousal}>
 
-      <div className={style.description}>
-        <h1>{slideData[currentSlideIndex].text}</h1>
-        {/* <p>{slideData[currentSlideIndex].body}</p> */}
-        <Button name='Join With Us'
-        onClick={pageToJoin}
-        />
-      </div>
-      {/* <div className={style.carousal}>
+        <div className={style.description}>
+          <h1>{slideData[currentSlideIndex].text}</h1>
+          {/* <p>{slideData[currentSlideIndex].body}</p> */}
+          <Button name='Join With Us'
+            onClick={pageToJoin}
+          />
+        </div>
+        {/* <div className={style.carousal}>
         {slideData.map((slideData, currentSlideIndex) => (
           <span
             key={currentSlideIndex}
