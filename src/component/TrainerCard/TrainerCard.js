@@ -1,24 +1,31 @@
 import React from 'react'
 import TCS from './TrainerCard.module.css'
-import { Trainer_details } from '../../utils/Trainer_details' 
+import { Trainer_details } from '../../utils/Trainer_details'
 
-export default function TrainerCard() {
+export default function TrainerCard() { 
     return (
         <div className={TCS.card_main}>
-            { 
-                Trainer_details.map((elem) => {
+
+            {
+                Trainer_details.filter((elem, i)=> i<4).map((elem, i) => {
                     return (
-                        <div className={TCS.main_box}>
-                            <div className={TCS.image_div}>
-                                <img src={elem.url} alt="" />
+                        <div className={TCS.main_box} key={i}>
+                            <div
+                                className={TCS.image_div}
+                                style={{
+                                    background: `url(${elem.url})`,
+                                    backgroundSize: "cover",    
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundPosition: 'center',
+                                }}
+                            >
+
                             </div>
 
-                            <a href={`#trainer${elem.id}`}>
-                                <div className={TCS.box_content}>
-                                    <h3>{elem.name}</h3>
-                                    <p>{elem.coach}</p>
-                                </div>
-                            </a>
+                            <div className={TCS.box_content}>
+                                <h3>{elem.name}</h3>
+                                <p>{elem.coach}</p>
+                            </div>
 
                         </div>
                     )

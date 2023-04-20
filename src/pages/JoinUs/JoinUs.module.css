@@ -20,30 +20,49 @@
 .input {
     background-color: rgb(183, 189, 195);
     min-height: 50vh;
-    max-width: 20vw;
+    max-width: 50%;
     margin: auto;
     text-align: center;
     padding: 15px;
     border-radius: 10px;
+    min-width: 30%;
+   
 
 }
 
 .data {
     margin: 30px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
 }
 
 label {
-    font-size: 35px;
-    margin: 20px;
+    font-size: 1em;
+   
 }
 
 input {
     border-radius: 5px;
-    margin: 5px;
+   margin: 5px;
     padding: 5px;
+   width: 50%;
+   max-height: 15px;
+
     
+}
+@media only screen and (max-width:725px) {
+    .data{
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+    }
+    input {
+        width: 100%;
+    }
 }
 
 button {
@@ -73,4 +92,6 @@ h5{
 #fieldsWarn{
     color: red;
 }
-
+.err{
+    color: red;
+}

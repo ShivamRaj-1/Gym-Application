@@ -9,7 +9,9 @@ export default function Background({ imgUrl, heading }) {
             backgroundAttachment: "fixed",
             backgroundRepeat: "no-repeat",
             backgroundPosition: 'center',
+
         }}  height="100vh" width='100%'
+
             className={BG.trainer_coverPic}
         >
             <h1> {heading} </h1>

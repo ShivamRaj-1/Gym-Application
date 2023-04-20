@@ -7,7 +7,7 @@ export default function TrainerMain({ show }) {
   return (
     <div className={TMS.trainerMain_mainBackground}>
       <div className={TMS.trainer_container}>
-
+ 
         <div className={TMS.heading_part}>
           <h1>Meet <span>Our</span> Team </h1>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum eius voluptatibus quo dignissimos quis voluptates, commodi culpa neque. Numquam dolor eos et fugiat, repellendus sint temporibus incidunt ullam nisi odio!</p>
