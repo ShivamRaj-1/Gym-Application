@@ -26,9 +26,21 @@ import { FiArrowRightCircle } from "react-icons/fi";
     text: "Cardio",
   },
   {
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Lasha_Talakhadze_Rio_2016.jpg/1200px-Lasha_Talakhadze_Rio_2016.jpg",
+    text: "Weightlifting",
+  },
+  {
     img: "./gymnastic.jpg",
     text: "Gymnastic",
   },
+  {
+    img: "https://cdn.shopify.com/s/files/1/0052/7043/7978/articles/bodyweight-squats-benefits-forms.jpg?v=1634856149",
+    text: "Squat",
+  },
+  {
+    img: "https://media.healthnews.com/images/featured/2022/09/running-woman-forest-day.jpg",
+    text: "Jogging",
+  }
 ];
 export default function TrainingProgram() {
   const [currentIndex, setCurrentIndex] = useState(0);

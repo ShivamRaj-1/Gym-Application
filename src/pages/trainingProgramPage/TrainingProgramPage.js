@@ -14,7 +14,6 @@ export default function TrainingProgramPage() {
     imgUrl={'./Programpage.jpg'}
 />
 <TrainingProgram />
-
 <TrainerBanner
     h1={'Wake up. Work out. Look hot.'}
     h2={'Kick ass. Your fears'}
