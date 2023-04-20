@@ -3,7 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    margin: 1em;
+z-index: 10;
 }
 .mainContainer h2{
 size: 20rem;

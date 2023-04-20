@@ -4,7 +4,7 @@ import styles from "./TrainingProgram.module.css";
 import { MdArrowForwardIos, MdArrowBackIosNew } from "react-icons/md";
 import { FiArrowRightCircle } from "react-icons/fi";
 
-export const data = [
+ const data = [
   {
     img: "./yoga.jpg",
     text: "Yoga",
@@ -45,7 +45,7 @@ export default function TrainingProgram() {
   return (
     <Fragment>
       <div className={styles.mainContainer}>
-        <h2>Training Program</h2>
+        <h1>Training Program</h1>
         <div className={styles.carousal_div}>
           {data.slice(currentIndex, currentIndex + 3).map((ele, index) => {
             return (
