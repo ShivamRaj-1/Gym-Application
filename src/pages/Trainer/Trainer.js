@@ -6,28 +6,28 @@ import { Trainer_details } from '../../utils/Trainer_details'
 import TrainerBanner from '../../component/TrainerBanner/TrainerBanner';
 
 export default function Trainer() {
-  const img = 'https://cdn.pixabay.com/photo/2015/07/02/10/26/training-828760_960_720.jpg';
+  const img = 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80';
 
   const trainer_card = [
     {
       img: 'https://preview.colorlib.com/theme/gym2/img/svg_icon/1.svg',
       heading: 'Weightlifting',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?', 
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?',
     },
     {
       img: 'https://preview.colorlib.com/theme/gym2/img/svg_icon/2.svg',
       heading: 'Specific Muscles',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?', 
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?',
     },
     {
       img: 'https://preview.colorlib.com/theme/gym2/img/svg_icon/3.svg',
       heading: 'Flex Your Muscles',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?', 
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?',
     },
     {
       img: 'https://preview.colorlib.com/theme/gym2/img/svg_icon/4.svg',
       heading: 'Cardio Exercises',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?', 
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, vel?',
     },
   ]
 
@@ -45,12 +45,13 @@ export default function Trainer() {
           {
             Trainer_details.map((elem) => {
               return (
-                <div style={{
-                  background: `url(${elem.url}) `,
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: 'center',
-                }}
+                <div
+                  style={{
+                    background: `url(${elem.url}) `,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: 'center',
+                  }}
                   className={TS.coach_box}
                 >
                   <div className={TS.coach_box_details}>
@@ -65,7 +66,7 @@ export default function Trainer() {
 
       </section>
 
-      <TrainerBanner h1 = {'BIG OFFER FOR'}  h2={'THIS SUMMER'} url={'https://preview.colorlib.com/theme/gym2/img/banner/big_offer.png.webp'}/>
+      <TrainerBanner h1={'A BIG OFFER FOR'} h2={'THIS SUMMER'} url={'https://preview.colorlib.com/theme/gym2/img/banner/big_offer.png.webp'} />
 
       <section className={TS.features_section}>
           <h1>PUSH YOUR LIMITS</h1>
@@ -84,7 +85,7 @@ export default function Trainer() {
               })
             }
           </div>
-      </section>
+      </section> 
 
     </div>
   )

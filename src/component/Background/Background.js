@@ -8,7 +8,7 @@ export default function Background({ imgUrl, heading }) {
             backgroundSize: "cover",
             backgroundAttachment: "fixed",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: 'top',
+            backgroundPosition: 'center',
         }}
             className={BG.trainer_coverPic}
         >

@@ -8,7 +8,7 @@ export default function TrainerBanner(props) {
         <section style={{
             background: `url(${props.url})`,
             backgroundRepeat: "no-repeat",
-            backgroundAttachment: 'cover',
+            backgroundSize: 'cover',
             backgroundPosition: 'center',
 
         }}
@@ -17,7 +17,7 @@ export default function TrainerBanner(props) {
             <div>
                 <h1> {props.h1} </h1>
                 <h1> {props.h2} </h1>
-                <Link to={'/joining'}><Button name= 'Join Now'/></Link>
+                <Link to={'/joining'}><Button name= 'JOIN NOW'/></Link>
             </div>
         </section>
     )
