@@ -72,7 +72,7 @@
 .features_section{
     width: 80%;
     margin: auto;
-    padding: 100px 0;
+    padding: 150px 0;
 }
 .features_section > h1{
     text-align: center;
@@ -98,7 +98,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    /* padding: 20px; */
 }
 .feature_box > h3{
     color: white;
@@ -109,4 +109,106 @@
 .feature_box > p{
     color: gray;
     text-align: center;
+}
+
+
+
+
+/* ============= RESPONSIVE ============= */
+
+/* Extra small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .coach_section{
+        width: 90%;
+    }
+    .coach_section h1{
+        font-size: 26px;
+    }
+    .coach_box{
+        width: 100%;
+    }
+    .features_section{
+        width: 90%;
+    }
+    .features_section h1{
+        font-size: 28px;
+    }
+    .feature_container{
+        flex-wrap: wrap;
+    }
+    .feature_box{
+        width: 100%;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 500px and up) */
+@media only screen and (min-width: 500px) {
+    .coach_section h1{
+        font-size: 30px;
+    }
+    .coach_box{
+        width: 100%;
+    }
+    .features_section h1{
+        font-size: 32px;
+    }
+    .feature_container{
+        flex-wrap: wrap;
+    }
+    .feature_box{
+        width: 100%;
+    }
+    .feature_box h3{
+        font-size: 26px;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .coach_section{
+        width: 90%;
+    }
+    .coach_section h1{
+        font-size: 30px;
+    }
+    .coach_box{
+        width: 48%;
+    }
+    .features_section{
+        width: 90%;
+    }
+    .features_section h1{
+        font-size: 36px;
+    }
+    .feature_box{
+        width: 48%;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .coach_section{
+        width: 80%;
+    }
+    .coach_section h1{
+        font-size: 34px;
+    }
+    .coach_box{
+        width: 31%;
+    }
+    .features_section{
+        width: 80%;
+    }
+    .features_section h1{
+        font-size: 46px;
+    }
+    .feature_box{
+        width: 25%;
+        padding: 0;
+    }
 }

@@ -26,4 +26,51 @@
     border: none;
     background-color: red;
     color:white;
+
+    font-weight: 600;
+}
+.trainer_banner_main button:hover{
+    background-color: rgb(138, 3, 3);
+    border: 1px solid red;
+    color: red;
+}
+
+
+/* ============= RESPONSIVE ============= */
+
+/* Extra small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .trainer_banner_main{
+        height: 40vh;
+    }
+    .trainer_banner_main h1{
+        font-size: 26px;
+    }
+    .trainer_banner_main button{
+        padding: 10px 20px;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 500px and up) */
+@media only screen and (min-width: 500px) {
+    .trainer_banner_main {
+        height: 60vh;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .trainer_banner_main{
+        height: 80vh;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .trainer_banner_main{
+        height: 100vh;
+    }
 }

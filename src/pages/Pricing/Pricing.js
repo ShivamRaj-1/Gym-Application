@@ -1,6 +1,8 @@
 import React from 'react'
 import PS from './Pricing.module.css'
 import Background from '../../component/Background/Background'
+import PricingBanner from '../../component/PricingBanner/PricingBanner';
+import PricingCard from '../../component/PricingCard/PricingCard';
 
 export default function Pricing() {
   const img = 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
@@ -9,7 +11,7 @@ export default function Pricing() {
     <>
       <Background heading='OUR PRICING' imgUrl={img} />
 
-      <div className={PS.pricing_mainBackground}>
+      <section className={PS.pricing_mainBackground}>
         <div className={PS.pricing_container}>
 
           <div className={PS.pass_part}>
@@ -62,7 +64,20 @@ export default function Pricing() {
           </div>
 
         </div>
-      </div>
+      </section>
+
+      <PricingBanner />
+
+      <section className={PS.pricing_feature_section}>
+        <div className={PS.pricing_feature_heading}>
+          <h4>JOIN US NOW</h4>
+          <h1>JOIN US OUR FREE WORKOUT TRAINING</h1>
+        </div>
+        
+        <div className={PS.Pfeature_container}>
+          <PricingCard />
+        </div>
+      </section>
     </>
   )
 }
