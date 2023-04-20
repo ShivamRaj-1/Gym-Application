@@ -94,8 +94,7 @@ gap: 2rem;
 @media screen and (max-width:640px) {
 
     .description {
-        position: relative;
-        top: -23rem;
+        top: -25rem;
        
     }
 
