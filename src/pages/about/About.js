@@ -1,12 +1,17 @@
 import React from "react";
 import styles from "./About.module.css";
 import Button from "../../component/button/Button";
+import Background from '../../component/Background/Background'
 
 export default function About() {
+  const img = 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80';
   function handleLearnMore() {
     alert("clicked from about us section");
   }
   return (
+    <>
+    <div className={styles.transparentBackground}></div>
+    <Background heading='ABOUT US' imgUrl={img} />
     <div className={styles.container}>
       <section className={styles.about}>
         <iframe
@@ -63,5 +68,7 @@ export default function About() {
         </div>
       </section>
     </div>
+    </>
+    
   );
 }

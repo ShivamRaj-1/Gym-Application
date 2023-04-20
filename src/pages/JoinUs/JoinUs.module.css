@@ -82,5 +82,8 @@ h5{
 #fieldsWarn{
     color: red;
 }
+.err{
+    color: red;
+}
 
 

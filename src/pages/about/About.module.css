@@ -1,10 +1,20 @@
 .container{
     display: flex;
     flex-direction: column;
-    margin: 3rem;
+    padding: 3rem;
+    background-color: #0e0d0dc5;
+}
+.transparentBackground {
+    width: 100%;
+    height: 86vh;
+    position: absolute;
+    z-index: 9;
+    top: 4rem;
+    left: 0;
+    background-image: linear-gradient(to top, #0000000f, #202124);
 }
 iframe{
-    width: 15rem;
+   max-width: 15rem;
     height: 20rem;
 }
 .about{
@@ -30,7 +40,23 @@ iframe{
     flex-direction: column;
     justify-content: space-evenly;
     margin: 0 2rem;
+    color: white;
 }
 .content h2{
     color: red;
+}
+
+@media only screen and (max-width: 699px){
+    .about, .choose{
+        flex-direction: column;
+        align-items: center;
+    }
+    .content{
+        margin: 1rem 0;
+        align-items: center;
+    }
+    iframe{
+        max-width: 20rem;
+         height: 20rem;
+     }
 }
