@@ -9,6 +9,7 @@ export default function JoinUs() {
     const [password, setPassword] = useState('')
     const [alreadyHave, setAlreadyHave] = useState(false)
     const [toHome, setToHome] = useState(false)
+
     const [loginEmail, setLoginEmail] = useState('')
     const [loginPassword, setLoginPassword] = useState('')
     const [found, setFound] = useState(false)
@@ -17,6 +18,7 @@ export default function JoinUs() {
     const navigate = useNavigate()
     const [emailError, setEmailError] = useState(false)
     const [passwordError, setPasswordError] = useState(false)
+
 
 
 
@@ -29,10 +31,12 @@ export default function JoinUs() {
         const regPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,20}$/;
 
 
+
         if (!regEmail.test(email)) {
             setEmailError(true);
         } else if (!regPassword.test(password)) {
             setPasswordError(true)
+
 
         } else {
 
@@ -106,6 +110,7 @@ export default function JoinUs() {
         setLoginEmail('')
         setLoginPassword('')
 
+
     }
 
 
@@ -117,6 +122,7 @@ export default function JoinUs() {
                     <div className={styles.container}>
 
                         <div className={styles.details} >
+
                             <form>
                                 <h1>Login Here</h1>
 
@@ -147,6 +153,7 @@ export default function JoinUs() {
                                 }
                                 <button onClick={handleLogin}>LOGIN</button>
                             </form>
+
                         </div>
 
 
@@ -157,16 +164,20 @@ export default function JoinUs() {
                         <div className={styles.container}>
                             <div className={styles.home}>
                                 <h1>Successfully Registered !</h1>
+
                                 <h5><Link to='/'>Home</Link></h5>
+
                                 <button onClick={handleAlreadyHave} > Login In</button>
                             </div>
                         </div> :
                         <form className={styles.container}>
+
                             <div className={styles.details}>
                                 <h1>Register Here</h1>
                                 <div className={styles.input}>
                                     <div className={styles.data}>
                                         <label htmlFor="name" >Name:</label>
+
                                         <input value={name}
                                             minLength={6} name='name'
                                             type='text' placeholder='Enter the Name'
@@ -174,6 +185,7 @@ export default function JoinUs() {
                                             required >
 
                                         </input>
+
                                     </div>
                                     <div className={styles.data}>
                                         <label htmlFor="email"  >Email:</label>
@@ -221,6 +233,7 @@ export default function JoinUs() {
 
 
                         </form>
+
 
 
             }

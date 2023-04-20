@@ -1,5 +1,8 @@
-import React, { Fragment, useEffect, useState } from "react";
-import style from "./Home.module.css";
+
+import React, { Fragment, useEffect,useState } from "react";
+// import style from "./Home.module.css";
+import style from "./demo.module.css";
+
 import Button from "../../component/button/Button";
 import TrainingProgram from "../../component/trainingProgram/TrainingProgram";
 import { slideData } from "../../utils/HomePageSliderData.js";
@@ -35,7 +38,7 @@ export function ImageSlider() {
       } else {
         setCurrentSlideIndex(currentSlideIndex + 1);
       }
-    }, 5000);
+    }, 100000);
     return () => clearTimeout(timer);
   }, [currentSlideIndex]);
 
