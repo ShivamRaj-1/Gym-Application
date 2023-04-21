@@ -51,6 +51,7 @@ export default function JoinUs() {
                 setError(false)
 
                 setToHome(true)
+                
                 const existingData = JSON.parse(localStorage.getItem('userData')) || [];
                 let notFound = false
 
