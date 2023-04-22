@@ -30,7 +30,7 @@ export default function JoinUs() {
     function handleRegister() {
         const regEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         const regPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,20}$/;
-        
+
 
 
         if (!regEmail.test(email)) {
@@ -52,43 +52,43 @@ export default function JoinUs() {
 
                 setToHome(true)
                 let estData;
-                if(JSON.parse(localStorage.getItem('userData'))===null){
-                     estData = []
-                    
-                }else{
-                    estData=JSON.parse(localStorage.getItem('userData'))
+                if (JSON.parse(localStorage.getItem('userData')) === null) {
+                    estData = []
+
+                } else {
+                    estData = JSON.parse(localStorage.getItem('userData'))
                 }
                 const existingData = estData
                 let notFound = false
 
-                if(existingData!=[]){
-
-               
-
-                for (let i = 0; i < existingData.length; i++) {
-                    if (email === existingData[i].email) {
-                        alert('user already existed please SIGN IN')
-                        notFound = true
-                        setToHome(false)
+                if (existingData != []) {
 
 
 
-                        break
+                    for (let i = 0; i < existingData.length; i++) {
+                        if (email === existingData[i].email) {
+                            alert('user already existed please SIGN IN')
+                            notFound = true
+                            setToHome(false)
 
+
+
+                            break
+
+                        }
+                    }
+
+                    if (notFound === false) {
+                        const localStore = { name: name, email: email, mobile: mobile, password: password }
+
+                        localStorage.setItem('userData', JSON.stringify([...existingData, localStore]))
+                    } else {
+                        setName('')
+                        setEmail('')
+                        setMobile('')
+                        setPassword('')
                     }
                 }
-
-                if (notFound === false) {
-                    const localStore = { name: name, email: email, mobile: mobile, password: password }
-
-                    localStorage.setItem('userData', JSON.stringify([...existingData, localStore]))
-                } else {
-                    setName('')
-                    setEmail('')
-                    setMobile('')
-                    setPassword('')
-                }
-            }
 
             }
         }
@@ -208,11 +208,11 @@ export default function JoinUs() {
                                             required  >
 
                                         </input>
-                                       
+
                                     </div>
                                     {
-                                            emailError ? <p className={styles.err}>Enter the valid Email</p> : ''
-                                        }
+                                        emailError ? <p className={styles.err}>Enter the valid Email</p> : ''
+                                    }
                                     <div className={styles.data}>
                                         <label htmlFor="mobile" >Mobile:</label>
                                         <input value={mobile}
@@ -232,11 +232,11 @@ export default function JoinUs() {
                                             required >
 
                                         </input>
-                                        
+
                                     </div>
                                     {
-                                            passwordError ? <p className={styles.err}>Enter the valid Password:atleast one digit,upper,lower and not spaces:min-6 characters</p> : ''
-                                        }
+                                        passwordError ? <p className={styles.err}>Enter the valid Password:atleast one digit,upper,lower and not spaces:min-6 characters</p> : ''
+                                    }
                                 </div>
                                 {
                                     error ? <p id={styles.fieldsWarn}>All the Input fields are mandatory</p> : ''
