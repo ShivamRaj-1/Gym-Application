@@ -30,7 +30,7 @@ export default function JoinUs() {
     function handleRegister() {
         const regEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
         const regPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,20}$/;
-
+        
 
 
         if (!regEmail.test(email)) {
@@ -38,13 +38,12 @@ export default function JoinUs() {
         } else if (!regPassword.test(password)) {
             setPasswordError(true)
 
-
         } else {
 
             setEmailError(false);
             setPasswordError(false)
 
-            if (name.trim() == '' || email.trim() == '' || mobile.trim() == '' || password.trim() == '') {
+            if (name.trim() === '' || email.trim() === '' || mobile.trim() === '' || password.trim() === '') {
                 setError(true)
 
             } else {
@@ -52,11 +51,22 @@ export default function JoinUs() {
                 setError(false)
 
                 setToHome(true)
-                const existingData = JSON.parse(localStorage.getItem('userData')) || [];
+                let estData;
+                if(JSON.parse(localStorage.getItem('userData'))===null){
+                     estData = []
+                    
+                }else{
+                    estData=JSON.parse(localStorage.getItem('userData'))
+                }
+                const existingData = estData
                 let notFound = false
 
+                if(existingData!=[]){
+
+               
+
                 for (let i = 0; i < existingData.length; i++) {
-                    if (email == existingData[i].email) {
+                    if (email === existingData[i].email) {
                         alert('user already existed please SIGN IN')
                         notFound = true
                         setToHome(false)
@@ -68,7 +78,7 @@ export default function JoinUs() {
                     }
                 }
 
-                if (notFound == false) {
+                if (notFound === false) {
                     const localStore = { name: name, email: email, mobile: mobile, password: password }
 
                     localStorage.setItem('userData', JSON.stringify([...existingData, localStore]))
@@ -78,6 +88,7 @@ export default function JoinUs() {
                     setMobile('')
                     setPassword('')
                 }
+            }
 
             }
         }

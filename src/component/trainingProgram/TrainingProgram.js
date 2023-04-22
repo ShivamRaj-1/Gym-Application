@@ -59,7 +59,8 @@ export default function TrainingProgram() {
       <div className={styles.mainContainer}>
         <h1>Training Program</h1>
         <div className={styles.carousal_div}>
-          {data.slice(currentIndex, currentIndex + 3).map((ele, index) => {
+          {window.screen.width > 840 ? 
+         data.slice(currentIndex, currentIndex + 3).map((ele, index) => {
             return (
               <div
                 key={index}
@@ -70,7 +71,21 @@ export default function TrainingProgram() {
                 <img src={ele.img} alt={`Slide${index}`} />
               </div>
             );
-          })}
+          })
+          :
+          data.map((ele, index) => {
+            return (
+              <div
+                key={index}
+                className={styles.carousal}
+                //   style={{ backgroundImage: `url(${ele.img}) center cover` }}
+              >
+                <b className={styles.imgText}>{ele.text}</b>
+                <img src={ele.img} alt={`Slide${index}`} />
+              </div>
+            );
+          })
+          }
         </div>
         <div className={styles.buttonContainer}>
             <MdArrowBackIosNew  className={styles.icon}
