@@ -33,13 +33,13 @@ export function ImageSlider() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (currentSlideIndex === 2) {
+      if (currentSlideIndex === slideData.length-1) {
         setCurrentSlideIndex(0);
       } else {
         setCurrentSlideIndex(currentSlideIndex + 1);
       }
-    }, 100000);
-    return () => clearTimeout(timer);
+    }, 4000);
+    // return () => clearTimeout(timer);
   }, [currentSlideIndex]);
 
   const bgImageStyle = {
