@@ -39,7 +39,7 @@ export function ImageSlider() {
         setCurrentSlideIndex(currentSlideIndex + 1);
       }
     }, 4000);
-    // return () => clearTimeout(timer);
+    return () => clearTimeout(timer);
   }, [currentSlideIndex]);
 
   const bgImageStyle = {
