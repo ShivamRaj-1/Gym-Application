@@ -59,8 +59,10 @@ export default function TrainingProgram() {
       <div className={styles.mainContainer}>
         <h1>Training Program</h1>
         <div className={styles.carousal_div}>
-          {window.screen.width > 640 ?   
-            data.slice(currentIndex, currentIndex + 3).map((ele, index) => {
+
+          {window.screen.width > 840 ? 
+         data.slice(currentIndex, currentIndex + 3).map((ele, index) => {
+
             return (
               <div
                 key={index}
@@ -71,7 +73,9 @@ export default function TrainingProgram() {
                 <img src={ele.img} alt={`Slide${index}`} />
               </div>
             );
+
           }):
+
           data.map((ele, index) => {
             return (
               <div
@@ -84,7 +88,6 @@ export default function TrainingProgram() {
               </div>
             );
           })
-          
           }
         </div>
         <div className={styles.buttonContainer}>
