@@ -18,7 +18,7 @@ Welcome to the Gym-Website project! This repository showcases a modern and dynam
 To install and run the application locally, follow these steps:
 1. Clone this repository to your local machine
 2. Run npm install to install all dependencies
-3. Run npm run dev to start the development server
+3. npm start to start the development server
 4. Open http://localhost:3000/ in your browser to view the application
 
 ## Deployment Site link
